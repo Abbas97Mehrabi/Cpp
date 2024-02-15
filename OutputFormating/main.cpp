@@ -112,7 +112,7 @@ int main(){
      std::cout << std::noshowpos;
      std::cout << "Pos_num : " << pos_num <<std::endl;
      std::cout << "Neg_num : " << neg_num <<std::endl;
-     // 06:26
+     
 
 
 
