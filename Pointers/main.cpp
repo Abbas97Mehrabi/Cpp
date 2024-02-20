@@ -133,6 +133,7 @@ int main(){
     }*/
 
     //std::nothrow
+    /*
     for (size_t i = 0; i < 100; i++){
           
           int *data = new(std::nothrow) int[100000000];
@@ -142,8 +143,41 @@ int main(){
                std::cout << "Data allocation failed" << std::endl;
           }
     }
-    std::cout << "Program ending well" << std::endl;
+    std::cout << "Program ending well" << std::endl;*/
+    size_t size{10};
+
+    double *p_salaries{new double[size]};
+
+    int *p_students{new(std::nothrow) int[size]{} };
+
+    double *p_scores {new(std::nothrow) double[size]{1,2,3,4,5}};
+
+     if(p_scores){
+          std::cout << "Size of scores (it's a regular pointer) : " << sizeof(p_scores) << std::endl;
+          std::cout << "Successfully allocated memory for scores" << std::endl;
+          for (size_t i{}; i < size; ++i)
+          {
+              std::cout << "Value : " << p_scores[i] << " : " << *(p_scores + i) << std::endl;
+          }
+     }
+     delete[] p_salaries;
+     p_salaries = nullptr;
+     delete[] p_students;
+     p_students = nullptr;
+     delete[] p_scores;
+     p_scores = nullptr;
     
+    // Static arrays and dynamic arrays
+    int scores[10] {1,2,3,4,5,6,7,8,9,10};// Lives on the stack
+    std::cout << "Scores size : " << std::size(scores) << std::endl;
+    for (auto s : scores)
+    {
+     std::cout << "Value : " << s << std::endl;
+    }
+    
+     int *p_scores1 = new int[1,2,3,4,5,6,7,8,9,10];// Lives on the heap
+     //std::cout << "p_scores1 size : " << std::size(p_scores1) << std::endl;
+
      return 0;
      
 }
