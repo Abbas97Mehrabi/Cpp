@@ -64,6 +64,7 @@ int main(){
       << std::strncmp(string_data1, string_data2, n) << std::endl;
      */
     //search for character
+    /*
      std::cout << std::endl;
      std::cout << "std::strchr : " << std::endl;
      
@@ -80,8 +81,34 @@ int main(){
           ++result;
           ++iteration;
      }
-     std::cout << "iteration : " << iteration << std::endl;
-     
+     std::cout << "iteration : " << iteration << std::endl;*/
+
+     //this one has a bug and printing 25 time
+     /*
+     const char *str {"Try not. Do, or do not. There is no try."};
+
+     char target = 'T';
+     const char *result{nullptr};
+     int iteration{};
+
+     while ((result = std::strchr(str, target)) != nullptr)
+     {
+          std::cout << "Found '" << target << "' starting at '" << result << "'\n";
+
+          ++str;
+          ++iteration;
+     }
+     std::cout << "iteration : " << iteration << std::endl;*/
+
+     std::cout << std::endl;
+     std::cout << "std::strrchr : " << std::endl;
+
+     char input[] = "/home/user/hello.cpp";
+     char* output = std::strrchr(input, '/');
+     if (output)
+     {
+          std::cout << output+1 << std::endl;
+     }
      
      
      return 0;
