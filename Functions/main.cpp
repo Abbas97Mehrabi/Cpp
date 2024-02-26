@@ -26,7 +26,7 @@ double increment_multiply(double a, double b){
      double result = ((++a) * (++b));
      return result;
 }
-
+int min(int a, int b);//Function declaration , prototype
 int main(){
 
      //enter_bar(21);
@@ -41,7 +41,13 @@ int main(){
 
      //double result1 = increment_multiply(3.00, 4.00);
      //std::cout << "Result is : " << result1 << std::endl;
+     std::cout << "Min is : " << min(12, 8) << std::endl;
 
      return 0;
-     
+}
+int min(int a, int b){//Function definition
+     if(a<b)
+          return a;
+     else
+          return b;
 }
