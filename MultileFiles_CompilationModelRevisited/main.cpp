@@ -1,6 +1,6 @@
 #include <iostream>
 #include "compare.h"
-#include "compare.cpp"
+
 
 
 int main(){
@@ -10,6 +10,8 @@ int main(){
 
      int minimum = min(23,32);
      std::cout << "Minimum : " << minimum << std::endl;
+     int result = inc_mult(4,7);
+     std::cout << "Result : " << result << std::endl;
      return 0;
      
 }

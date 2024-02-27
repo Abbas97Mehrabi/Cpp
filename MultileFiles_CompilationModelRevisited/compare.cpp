@@ -10,3 +10,6 @@ int min(int a, int b){
      else
           return b;
 }
+int inc_mult(int a, int b){
+     return ((++a)*(++b));
+}
