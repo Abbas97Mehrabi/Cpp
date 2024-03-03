@@ -1,8 +1,15 @@
 #include <iostream>
-#include <string>
+#include <cstring>
 
 template <typename T> T maximum(T a, T b);
 template <typename T> T multiply(T a, T b);
+
+//template specialization
+template <>
+const char* maximum<const char*>(const char* a, const char* b){
+     return (std::strcmp(a,b) > 0) ? a : b;
+}
+
 int main(){
 
      int a{10};
@@ -24,6 +31,13 @@ int main(){
      //Explicit template arguments
      auto max = maximum<double>(a,d);
      std::cout << "max : " << max << std::endl;
+
+     //pointer template
+     const char* g{"wild"};
+     const char* h{"animal"};
+
+     const char* result = maximum(g, h);
+     std::cout << "max(const char*) : " << result << std::endl;
 
 
 
