@@ -8,6 +8,7 @@ private:
      double height{1.0};
 
 public:
+     //Cylinder() = default; // for build a empty construct
      Cylinder(/* args */){
           base_radius = 2.0;
           height = 2.0;
