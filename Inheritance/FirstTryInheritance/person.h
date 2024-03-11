@@ -14,12 +14,19 @@ private:
 public:
       Person();
       Person(string& first_name_param, string& last_name_param);
-      ~Person();
-      string get_first_name(){
+      //Getters
+      string get_first_name() const{
             return first_name;
       }
-      string get_last_name(){
+      string get_last_name() const{
             return last_name;
+      }
+      //Setters
+      void set_first_name(string_view fn){
+            first_name = fn;
+      }
+      void set_last_name(string_view ln){
+            last_name = ln;
       }
 };
 

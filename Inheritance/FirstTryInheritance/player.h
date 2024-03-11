@@ -3,18 +3,18 @@
 
 #include <string>
 #include <iostream>
+#include <string_view>
 #include "person.h"
 using namespace std;
 
-class Player
+class Player : public Person
 {
       friend ostream& operator<<(ostream& out, const Player& player);
 private:
       string m_game{"None"};
 public:
       Player() = default;
-      Player(string& game_param);
-      ~Player();
+      Player(string_view game_param);
 };
 
 #endif // PLAYER_H
