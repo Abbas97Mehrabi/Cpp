@@ -2,6 +2,7 @@
 #include "person.cpp"
 #include "player.cpp"
 #include "nurse.cpp"
+#include "engineer.cpp"
 
 int main(){
      
@@ -20,7 +21,11 @@ int main(){
      //nurse1.m_fullname = "Mary"; // Compiler error
      std::cout << "Nurse 1 : " << nurse1 << std::endl;
 
+     std::cout << "---------" << std::endl;
+     Engineer engineer1;
+     //engineer1.m_fullname = "Selman Kara"; // Compiler error
+     //engineer1.m_age = 21; // Compiler error
+     //engineer1.m_address = "Trabzon Akcaabat";
 
      return 0;
-     
 }
