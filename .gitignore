@@ -1,3 +1,4 @@
 .vscode/
 */rooster
 Classes/*/rooster
+*.exe
