@@ -1,0 +1,48 @@
+#include <iostream>
+#include <memory>
+#include "shape.h"
+#include "oval.h"
+#include "circle.h"
+using namespace std;
+
+int main(){
+    Circle circle1(7.2,"circle1");
+    Oval oval1(13.3,1.2,"Oval1");
+    Circle circle2(11.2,"circle2");
+    Oval oval2(31.3,15.2,"Oval2");
+    Circle circle3(12.2,"circle3");
+    Oval oval3(53.3,9.2,"Oval3");
+
+    //if you store raw object data in  an array set up to store base class objects
+    //the data is going to be sliced off!
+    /*
+    cout << "sizeof(circle1) : " << sizeof(circle1) << endl;
+    Shape shapes1[] {circle1,oval1,circle2,oval2,circle3,oval3};
+    
+    for(Shape &s : shapes1){
+        cout << "sizeof(circle1) : " << sizeof(s) << endl;
+        s.draw();
+    }
+    */
+   //what if we store in references? Compiler error : references aren't left assignable
+   //const Shape &shape2[] {circle1,oval1,circle2,oval2,circle3,oval3};
+
+    //raw pointers
+    /*
+    Shape *shapes3[]{&circle1,&oval1,&circle2,&oval2,&circle3,&oval3};
+
+    for(Shape *shape_ptr : shapes3){
+        cout << "Inside array , sizeof(*shape_ptr) : " << sizeof(*shape_ptr) << endl;
+        shape_ptr->draw();
+        cout << endl;
+    }
+    */
+
+   //Smart pointers
+   shared_ptr<Shape> shapes4[]{make_shared<Circle>(12.2,"circle4"),
+                               make_shared<Oval>(10.0,20.2,"Oval4")};
+    for(auto& s : shapes4){
+        s->draw();
+    }
+    return 0;
+}
